@@ -1,0 +1,28 @@
+<%- include('../partials/__head') %>
+    <div class="container">
+      <%- include('../partials/__message') %>
+        <div class="row">
+          <div class="col">
+            <form action="/owner/update/<%= id %>" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="InputName" name="nama_pemilik" value="<%= nama_pemilik %>">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Alamat</label>
+                  <input type="text" class="form-control" id="InputAdress" name="alamat" value="<%= alamat %>">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">KTP</label>
+                  <input type="text" class="form-control" id="InputKTP" name="ktp" value="<%= ktp %>">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Nomor Telephone</label>
+                  <input type="text" class="form-control" id="InputTelephone" name="no_hp" value="<%= no_hp %>">
+                </div>
+                <button type="submit" class="btn btn-primary" id="nextButton">Berikutnya</button>
+              </form>
+          </div>  
+        </div>
+    </div>
+    <%- include('../partials/__foot') %>

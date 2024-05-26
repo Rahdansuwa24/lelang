@@ -1,0 +1,44 @@
+<%- include('../partials/__head') %>
+    <div class="container">
+      <%- include('../partials/__message') %>
+        <div class="row">
+          <div class="col1">
+            <h1>Hello <%= email %></h1>
+            <a href="/logout">Logout</a>
+            <button class="btntmbh"><a href="/owner" class="btn">Tambah</a></button>
+          </div>
+          <div class="col2">
+            <h3>Daftar lelang</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nama Pemilik</th>
+                  <th scope="col">Merk Mobil</th>
+                  <th scope="col">Seri Mobil</th>
+                  <th scope="col">Open Bidding</th>
+                  <th scope="col">Waktu</th>
+                  <th colspan="2" scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i<data.length; i++){  %>
+                  <tr>
+                    <th scope="row"><%= (i+1)%></th>
+                    <td><%= data[i].nama_pemilik %></td>
+                    <td><%= data[i].merk_mobil %></td>
+                    <td><%= data[i].no_seri %></td>
+                    <td><%= data[i].start_harga %></td>
+                    <td><%= data[i].times %></td>
+                    <td>
+                      <a href="/owner/edit/<%= data[i].id_pemilik %>" class="btn btn-sm btn-warning">Edit</a>
+                      <a href="/produk/delete/<%= data[i].id_produk %>" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>  
+        </div>
+    </div>
+    <%- include('../partials/__foot') %>

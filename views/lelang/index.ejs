@@ -1,0 +1,29 @@
+<%- include('../partials/__head') %>
+    <div class="container">
+      <%- include('../partials/__message') %>
+        <div class="row">
+          <div class="col">
+            <form action="/loan/tambahkan" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Start Harga</label>
+                  <input type="text" class="form-control" id="InputName" name="start_harga">
+                </div>
+                <div class="mb-3">
+                    <label for="agama" class="form-label">Merk Mobil</label>
+                    <select name="id_mobil" required class="form-control">
+                        <%  for(let i=0; i<Data.length; i++){ %>
+                          <option value="<%= Data[i].id_mobil%>"><%=Data[i].merk_mobil%></option>
+                        <%}%>
+                        
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Durasi Lelang</label>
+                  <input type="time" class="form-control" id="InputKTP" name="times">
+                </div>
+                <button type="submit" class="btn btn-primary" id="nextButton">Berikutnya</button>
+              </form>
+          </div>  
+        </div>
+    </div>
+    <%- include('../partials/__foot') %>

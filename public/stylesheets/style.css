@@ -1,0 +1,15 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.btntmbh{
+  border: none;
+  border-radius: 50px;
+}
+.btntmbh:hover{
+  background-color: blue;
+  color: white;
+}

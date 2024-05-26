@@ -1,0 +1,26 @@
+<%- include('../partials/__head') %>
+    <div class="container">
+        <% if (messages.success) { %>
+          <div class="alert alert-info" role="alert">
+            <%- messages.success %>
+          </div>
+        <% } %> 
+        <div class="row">
+          <div class="col">
+            <form action="/log" method="POST">
+                <div class="mb-3">
+                  <label for="nama" class="form-label">Email</label>
+                  <input type="text" class="form-control" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Sandi</label>
+                    <input type="password" class="form-control" name="passwords">
+                  </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-sm btn-success">Login</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <%- include('../partials/__foot') %>

@@ -1,0 +1,53 @@
+<%- include('../partials/__head') %>
+    <div class="container">
+      <%- include('../partials/__message') %>
+        <div class="row">
+          <div class="col">
+            <form action="/cars/tambahkan" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Merk Mobil</label>
+                  <input type="text" class="form-control" id="InputName" name="merk_mobil">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Seri Mobil</label>
+                  <input type="text" class="form-control" id="InputAdress" name="no_seri">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Tahun Keluaran</label>
+                  <input type="text" class="form-control" id="InputKTP" name="tahun_keluaran">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Gambar Depan</label>
+                  <input type="file" class="form-control" id="InputTelephone" name="front">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Gambar Belakang</label>
+                  <input type="file" class="form-control" id="InputTelephone" name="rear">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Gambar Kiri</label>
+                  <input type="file" class="form-control" id="InputTelephone" name="kiri">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Gambar Kanan</label>
+                  <input type="file" class="form-control" id="InputTelephone" name="kanan">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Deskripsi Lanjutan</label>
+                  <input type="text" class="form-control" id="InputTelephone" name="deskripsi">
+                </div>
+                <div class="mb-3">
+                    <label for="agama" class="form-label">Nama Pemilik</label>
+                    <select name="id_pemilik" required class="form-control">
+                        <%  for(let i=0; i<Data.length; i++){ %>
+                          <option value="<%= Data[i].id_pemilik%>"><%=Data[i].nama_pemilik%></option>
+                        <%}%>
+                        
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="nextButton">Berikutnya</button>
+              </form>
+          </div>  
+        </div>
+    </div>
+    <%- include('../partials/__foot') %>
