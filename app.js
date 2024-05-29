@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var pemilikRouter = require('./routes/pemilik')
 var mobilRouter = require('./routes/mobil')
 var lelangRouter = require('./routes/lelang')
+var tawarRouter = require('./routes/tawar')
 
 const { strict } = require('assert');
 
@@ -30,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash())
 app.use(session({
   cookie: {
-    maxAge: 6000000000000,
+    maxAge: 6000000000000000,
     secure: false,
     httpOnly: true,
     sameSite: 'strict'
@@ -46,6 +47,7 @@ app.use('/users', usersRouter);
 app.use('/owner', pemilikRouter);
 app.use('/cars', mobilRouter);
 app.use('/loan', lelangRouter);
+app.use('/tawar', tawarRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

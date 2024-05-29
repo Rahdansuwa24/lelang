@@ -1,44 +1,42 @@
-<%- include('../partials/__head') %>
-    <div class="container">
-      <%- include('../partials/__message') %>
-        <div class="row">
-          <div class="col1">
-            <h1>Hello <%= email %></h1>
-            <a href="/logout">Logout</a>
-            <button class="btntmbh"><a href="/owner" class="btn">Tambah</a></button>
-          </div>
-          <div class="col2">
-            <h3>Daftar lelang</h3>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nama Pemilik</th>
-                  <th scope="col">Merk Mobil</th>
-                  <th scope="col">Seri Mobil</th>
-                  <th scope="col">Open Bidding</th>
-                  <th scope="col">Waktu</th>
-                  <th colspan="2" scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% for(var i=0; i<data.length; i++){  %>
-                  <tr>
-                    <th scope="row"><%= (i+1)%></th>
-                    <td><%= data[i].nama_pemilik %></td>
-                    <td><%= data[i].merk_mobil %></td>
-                    <td><%= data[i].no_seri %></td>
-                    <td><%= data[i].start_harga %></td>
-                    <td><%= data[i].times %></td>
-                    <td>
-                      <a href="/owner/edit/<%= data[i].id_pemilik %>" class="btn btn-sm btn-warning">Edit</a>
-                      <a href="/produk/delete/<%= data[i].id_produk %>" class="btn btn-sm btn-danger">Delete</a>
-                    </td>
-                  </tr>
-                <% } %>
-              </tbody>
-            </table>
-          </div>  
-        </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CARS LOAN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/user/style.css">
+  </head>
+  <body>
+    <%- include('../partials/__nav') %>
+    <div class="head">
+      <div class="scrphead">
+        <h3 class="text-white"> Halaman Lelang</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet atque laudantium dolor eligendi, voluptas maxime expedita officiis blanditiis ex ullam eum debitis in pariatur dignissimos inventore mollitia quo. Esse?
+        </p>
+      </div>
+      <div class="text-center my-4">
+        <a href="/owner" class="btn btn-primary mx-2">Tambah</a>
+      </div>
     </div>
-    <%- include('../partials/__foot') %>
+    <div class="card my-4 p-3 shadow" style="border-radius: 50px 50px 0px 0px;">
+      <h3 class="text-center mb-4">Daftar Lelang</h3>
+      <div class="list-group">
+        <% for(var i=0; i<data.length; i++){ %>
+          <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="mb-1"><strong>Barang:</strong> <%= data[i].merk_mobil %> <%= data[i].no_seri %></h5>
+              <p class="mb-1"><strong>Pemilik:</strong> <%= data[i].nama_pemilik %></p>
+              <small><strong>Open Bidding:</strong> <%= data[i].start_harga %></small>
+              <small class="text-muted"><strong>Waktu:</strong> <%= data[i].times %></small>
+            </div>
+            <div>
+              <a href="/tawar" class="btn btn-success btn-sm mx-1"><i class="fas fa-edit"></i> Tawar</a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+</div>
+<%- include('../partials/__foot') %>

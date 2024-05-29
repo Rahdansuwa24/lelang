@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const Model_User = require('../Model/Model_User')
-const Model_Lelang = require('../Model/Model_Lelang')
+const Model_Lelang = require('../Model/Model_Lelang');
+const Model_Tawar = require('../Model/Model_Tawar');
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {

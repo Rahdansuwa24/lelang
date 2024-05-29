@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Model_User = require('../Model/Model_User')
+var Model_Tawar = require('../Model/Model_Tawar')
 const bcrypt = require('bcrypt')
 
 /* GET home page. */

@@ -23,6 +23,22 @@ class Model_Pemilik{
             })
         })
     }
+    static async editAll(Data){
+        return new Promise((resolve, reject) => {
+            connection.query(`SELECT pemilik.*, mobil.*, lelang.*
+            FROM pemilik
+            LEFT JOIN mobil ON pemilik.id_pemilik = mobil.id_pemilik
+            LEFT JOIN lelang ON lelang.id_mobil = mobil.id_mobil;
+            `, Data,(err, rows)=>{
+                if(err){
+                    reject(err)
+                }else{
+                    resolve(rows)
+                }
+            })
+        })
+    }
+
 
     static async getId(id){
         return new Promise((resolve, reject) => {
@@ -38,7 +54,7 @@ class Model_Pemilik{
 
     static async Update(id ,Data){
         return new Promise((resolve, reject) => {
-            connection.query("update pemilik set ? where id_pemilik = " + id, Data,(err, rows)=>{
+            connection.query('update pemilik set ? where id_pemilik = ' + id, Data,(err, rows)=>{
                 if(err){
                     reject(err)
                 }else{

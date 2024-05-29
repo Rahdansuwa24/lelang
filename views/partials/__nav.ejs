@@ -1,6 +1,10 @@
 <nav class="navbar bg-body-tertiary mb-4">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Workshop Pemrograman</a>
+      <a class="navbar-brand" href="/">The Loans</a>
+      <form class="d-flex mt-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,35 +15,8 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/kategori">Kategori</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/produk">Produk</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/mahasiswa">Mahasiswa</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/pegawai">Pegawai</a></li>
-                <li><a class="dropdown-item" href="/ruangan">Ruangan</a></li>
-                <li><a class="dropdown-item" href="/penyimpanan">Penyimpanan</a></li>
-                <li><a class="dropdown-item" href="/barang">Barang</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="/logout">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            <a href="/logout" class="btn btn-outline-primary mx-2">Logout</a>
+            
         </div>
       </div>
     </div>
